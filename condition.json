@@ -1,0 +1,93 @@
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Philadelphia, PA",
+		"city":"Philadelphia",
+		"state":"PA",
+		"state_name":"Pennsylvania",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"19103",
+		"magic":"1",
+		"wmo":"99999",
+		"latitude":"39.95278168",
+		"longitude":"-75.17414856",
+		"elevation":"18.00000000"
+		},
+		"observation_location": {
+		"full":"SW Center City, Philadelphia, Pennsylvania",
+		"city":"SW Center City, Philadelphia",
+		"state":"Pennsylvania",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"39.943394",
+		"longitude":"-75.175507",
+		"elevation":"56 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"KPAPHILA105",
+		"observation_time":"Last Updated on February 22, 3:51 PM EST",
+		"observation_time_rfc822":"Mon, 22 Feb 2016 15:51:20 -0500",
+		"observation_epoch":"1456174280",
+		"local_time_rfc822":"Mon, 22 Feb 2016 15:51:59 -0500",
+		"local_epoch":"1456174319",
+		"local_tz_short":"EST",
+		"local_tz_long":"America/New_York",
+		"local_tz_offset":"-0500",
+		"weather":"Partly Cloudy",
+		"temperature_string":"52.9 F (11.6 C)",
+		"temp_f":52.9,
+		"temp_c":11.6,
+		"relative_humidity":"40%",
+		"wind_string":"Calm",
+		"wind_dir":"WSW",
+		"wind_degrees":244,
+		"wind_mph":0.9,
+		"wind_gust_mph":"4.0",
+		"wind_kph":1.4,
+		"wind_gust_kph":"6.4",
+		"pressure_mb":"1020",
+		"pressure_in":"30.13",
+		"pressure_trend":"+",
+		"dewpoint_string":"29 F (-2 C)",
+		"dewpoint_f":29,
+		"dewpoint_c":-2,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"52.9 F (11.6 C)",
+		"feelslike_f":"52.9",
+		"feelslike_c":"11.6",
+		"visibility_mi":"10.0",
+		"visibility_km":"16.1",
+		"solarradiation":"--",
+		"UV":"1","precip_1hr_string":"0.00 in ( 0 mm)",
+		"precip_1hr_in":"0.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.00 in (0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/US/PA/Philadelphia.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KPAPHILA105",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=39.943394,-75.175507",
+		"nowcast":""
+	}
+}
