@@ -3,7 +3,8 @@ require 'httparty'
 class Condition
 
   def initialize(zip)
-    @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/conditions/q/#{zip}.json")
+    # @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/conditions/q/#{zip}.json")
+      @response = JSON.parse(File.read("condition.json"))
   end
 
 def temperature

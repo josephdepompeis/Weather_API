@@ -20,4 +20,5 @@ puts "Current Weather : #{c.current_weather}"
 
 
 w = Forecast.new(zip)
-puts "here's some data !  #{w.day0}"
+w.get_forecast
+# puts "here's some data !  #{w.get_forecast}"

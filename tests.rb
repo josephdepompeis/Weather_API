@@ -36,7 +36,7 @@ class WeatherTests < Minitest::Test
 
 def test_forecast
     w = Forecast.new(19102)
-    assert_equal "bonerville", w.day0
+    assert_equal "bonerville", w.get_forecast
 
   end
 
