@@ -1,10 +1,9 @@
+
 class Alert
-
   def initialize(zip)
-    # @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/alerts/q/#{zip}.json")
-    @response = JSON.parse(File.read("alert.json"))
+    @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/alerts/q/#{zip}.json")
+    # @response = JSON.parse(File.read("alert.json"))
   end
-
 
   def get_alert
     alerts = @response["alerts"]
@@ -21,7 +20,4 @@ class Alert
     return long_text
   end
 
-
-
-  
 end

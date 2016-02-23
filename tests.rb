@@ -7,6 +7,7 @@ require './forecast'
 require 'json'
 require './astronomy'
 require './alert'
+require './hurricane'
 
 class Condition
   def initialize(zip)
@@ -32,8 +33,11 @@ class Alert
   end
 end
 
-
-
+class Hurricane
+  def initialize(zip)
+    @response = JSON.parse(File.read("hurricane.json"))
+  end
+end
 
 class WeatherTests < Minitest::Test
 
@@ -43,7 +47,6 @@ class WeatherTests < Minitest::Test
     a = Astronomy.new(19102)
   end
 
-
   def test_conditions
     c = Condition.new(19102)
     assert_equal "Partly Cloudy", c.current_weather
@@ -51,13 +54,13 @@ class WeatherTests < Minitest::Test
     assert_equal 52.9, c.temperature
   end
 
-def test_forecast
+  def test_forecast
     w = Forecast.new(19102)
     assert w.get_forecast
     refute w.get_forecast.empty?
   end
 
-def test_astronomy
+  def test_astronomy
     a = Astronomy.new(19102)
     a.get_astronomy_sunrise
     a.get_astronomy_sunset
@@ -65,14 +68,19 @@ def test_astronomy
     assert a.get_astronomy_sunset
     refute a.get_astronomy_sunrise.empty?
     refute a.get_astronomy_sunset.empty?
-end
+  end
 
-def test_alert
+  def test_alert
     alert1 = Alert.new(19102)
     alert1.get_alert
     assert alert1.get_alert
     refute alert1.get_alert.empty?
   end
 
-
+  def test_hurricane
+    h = Hurricane.new(19102)
+    h.get_hurricane
+    assert h.get_hurricane
+    refute h.get_hurricane.empty?
+  end
 end
