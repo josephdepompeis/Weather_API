@@ -1,5 +1,5 @@
 class Forecast
-attr_reader :forecast
+# attr_reader :forecast
   def initialize(zip)
     # @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/forecast10day/q/#{zip}.json")
       @response = JSON.parse(File.read("forecast.json"))
@@ -13,12 +13,13 @@ attr_reader :forecast
 
 
     def get_forecast
-      puts "--Ten Day N' Night Forcast--"
+      long_text = ["--Ten Day N' Night Forcast--  "]
+      # puts "--Ten Day N' Night Forcast--"
       days = @response["forecast"]["txt_forecast"]["forecastday"]
       days.each do |d|
-        puts "On #{d["title"]}, science suggests #{d["fcttext"].downcase}"
-
+      long_text << "On #{d["title"]}, science suggests #{d["fcttext"].downcase}"
       end
+      return long_text.to_s
     end
 
 
