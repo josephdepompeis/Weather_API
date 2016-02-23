@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Forecast
 # attr_reader :forecast
   def initialize(zip)
@@ -14,7 +16,6 @@ class Forecast
 
     def get_forecast
       long_text = ["--Ten Day N' Night Forcast--  "]
-      # puts "--Ten Day N' Night Forcast--"
       days = @response["forecast"]["txt_forecast"]["forecastday"]
       days.each do |d|
       long_text << "On #{d["title"]}, science suggests #{d["fcttext"].downcase}"

@@ -6,21 +6,33 @@ require './conditions'
 require './forecast'
 require 'json'
 require './astronomy'
+require './alert'
 
-# class Condition
-#   def initialize(zip)
-#     @response = JSON.parse(File.read("condition.json"))
-#   end
-# end
-#
-# class Forecast
-#   def initialize(zip)
-#     @response = JSON.parse(File.read("forecast.json"))
-#   end
+class Condition
+  def initialize(zip)
+    @response = JSON.parse(File.read("condition.json"))
+  end
+end
+
+class Forecast
+  def initialize(zip)
+    @response = JSON.parse(File.read("forecast.json"))
+  end
+end
+
+class Astronomy
+  def initialize(zip)
+    @response = JSON.parse(File.read("astronomy.json"))
+  end
+end
+
+class Alert
+  def initialize(zip)
+    @response = JSON.parse(File.read("alert.json"))
+  end
+end
 
 
-#
-# end
 
 
 class WeatherTests < Minitest::Test
@@ -42,13 +54,25 @@ class WeatherTests < Minitest::Test
 def test_forecast
     w = Forecast.new(19102)
     assert w.get_forecast
-
+    refute w.get_forecast.empty?
   end
 
 def test_astronomy
     a = Astronomy.new(19102)
     a.get_astronomy_sunrise
     a.get_astronomy_sunset
+    assert a.get_astronomy_sunrise
+    assert a.get_astronomy_sunset
+    refute a.get_astronomy_sunrise.empty?
+    refute a.get_astronomy_sunset.empty?
 end
+
+def test_alert
+    alert1 = Alert.new(19102)
+    alert1.get_alert
+    assert alert1.get_alert
+    refute alert1.get_alert.empty?
+  end
+
 
 end
